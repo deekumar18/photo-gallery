@@ -9,4 +9,7 @@ export class Tab1Page {
 
   constructor() {}
 
+  test(){
+   console.log("testing............")
+  }
 }

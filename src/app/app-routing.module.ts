@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'colorvision',
+    loadChildren: () => import('./colorvision/colorvision.module').then( m => m.ColorvisionPageModule)
   }
 ];
 @NgModule({
