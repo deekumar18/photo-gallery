@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'colorvision',
     loadChildren: () => import('./colorvision/colorvision.module').then( m => m.ColorvisionPageModule)
+  },
+  {
+    path: 'cvcalc',
+    loadChildren: () => import('./cvcalc/cvcalc.module').then( m => m.CvcalcPageModule)
   }
 ];
 @NgModule({
