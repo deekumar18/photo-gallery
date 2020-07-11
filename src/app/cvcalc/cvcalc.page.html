@@ -1,18 +1,18 @@
-<ion-card>
-  <img src="assets/img/{{value}}_tile.jpg" alt="ion">
-  
- 
 
-</ion-card>
 
 
 <ion-content padding>
+  <ion-card>
+    <img src="assets/img/CV_TEST_IMG/CV_{{value}}.png" alt="ion">
+  </ion-card>
   <ion-item>
     <ion-label class="value">
       {{value}}
     </ion-label>
   </ion-item>
   <div *ngFor="let numGroup of numberGroups">
-    <ion-button size="default" color="warning" *ngFor="let num of numGroup" (click)="onButtonPress(num)" class="calc-button">{{num}}</ion-button>
+    <ion-button size="default" color="warning" 
+    *ngFor="let num of numGroup" (click)="onButtonPress(num)" 
+    class="calc-button">{{num}}</ion-button>
   </div>
 </ion-content>

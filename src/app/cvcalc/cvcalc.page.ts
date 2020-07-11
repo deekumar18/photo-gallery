@@ -14,7 +14,7 @@ export class CvcalcPage implements OnInit {
   }
 
   value = '1';
-  oldValue = '0';
+  imgVal = '3';
   
 
   lastOperator = 'x';
@@ -41,20 +41,9 @@ export class CvcalcPage implements OnInit {
       this.value = '0';
       this.readyForNewInput = true;
     }
-    else if (symbol === '=') {
-      if (this.lastOperator === '>')
-        this.value = '' + (parseInt(this.oldValue) * parseInt(this.value));
-      else if (this.lastOperator === '-')
-        this.value = '' + (parseInt(this.oldValue) - parseInt(this.value));
-      else if (this.lastOperator === '+')
-        this.value = '' + (parseInt(this.oldValue) + parseInt(this.value));
-      else if (this.lastOperator === '/')
-        this.value = '' + (parseInt(this.oldValue) / parseInt(this.value));
+     else { // operator
       this.readyForNewInput = true;
-    }
-    else { // operator
-      this.readyForNewInput = true;
-      this.oldValue = this.value;
+      this.imgVal = this.value;
       this.lastOperator = symbol;
     }
   }
