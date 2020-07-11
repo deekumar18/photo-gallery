@@ -12,10 +12,13 @@ export class CvcalcPage implements OnInit {
 
   ngOnInit() {
   }
-
-  value = '1';
-  imgVal = '3';
   
+  value = '';
+  
+  imgArr = ['3','5','6','8','12','15','29','42','57','70','74']
+  resultArr = []
+  imgVal = this.imgArr[0];
+  imgPos = 0;
 
   lastOperator = 'x';
   readyForNewInput = true;
@@ -37,9 +40,20 @@ export class CvcalcPage implements OnInit {
         this.value += '' + symbol;
       this.readyForNewInput = false;
     }
-    else if (symbol === 'c') {
-      this.value = '0';
-      this.readyForNewInput = true;
+    else if (symbol === '>') {
+      this.imgVal = this.imgArr[this.imgPos]
+      this.imgPos++
+      this.resultArr.push(this.value)
+      this.value = ''
+      this.readyForNewInput = true
+
+    }
+    else if (symbol === 'skip') {
+      this.imgVal = this.imgArr[this.imgPos]
+      this.imgPos++
+      this.value = ''
+      this.readyForNewInput = true
+
     }
      else { // operator
       this.readyForNewInput = true;
