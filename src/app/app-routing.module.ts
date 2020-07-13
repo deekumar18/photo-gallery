@@ -13,7 +13,12 @@ const routes: Routes = [
   {
     path: 'cvcalc',
     loadChildren: () => import('./cvcalc/cvcalc.module').then( m => m.CvcalcPageModule)
+  },  {
+    path: 'visual',
+    loadChildren: () => import('./visual/visual.module').then( m => m.VisualPageModule)
   }
+
+
 ];
 @NgModule({
   imports: [
